@@ -26,12 +26,11 @@ fn main() {
                     button: MouseButton::Right,
                     ..
                 } => {
-                    let path = FileDialog::new().set_owner(&window).show_open_single_file();
+                    let path = FileDialog::new().show_open_single_file();
 
                     let confirm = MessageDialog::new()
                         .set_title("Message")
                         .set_text(&format!("{:?}", path))
-                        .set_owner(&window)
                         .show_confirm();
 
                     println!("{:?}", confirm);
